@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "995440672106",
+    "project_id": "asr-fb-test",
+    "storage_bucket": "asr-fb-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995440672106:android:a8cc83846f491bb542f913",
+        "android_client_info": {
+          "package_name": "com.example.test1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995440672106-r1emp4sfi3omjts9v29l724hu3s7va3d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXVco97gNgFDdjV2-acHTUMEZcfgeKITE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995440672106-r1emp4sfi3omjts9v29l724hu3s7va3d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
