@@ -24,8 +24,8 @@ public class RecyclerViewHolders extends RecyclerView.ViewHolder{
 
     public RecyclerViewHolders(final View itemView, final List<Task> taskObject) {
         super(itemView);
-        taskTitle = (TextView)itemView.findViewById(R.id.task_title);
-        deleteIcon = (Button)itemView.findViewById(R.id.delete_task);
+        taskTitle = itemView.findViewById(R.id.task_title);
+        deleteIcon = itemView.findViewById(R.id.delete_task);
         deleteIcon.setOnClickListener(v -> {
 
             String taskTitle = taskObject.get(getAdapterPosition()).getTask();

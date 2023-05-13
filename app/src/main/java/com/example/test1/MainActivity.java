@@ -24,22 +24,20 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private RecyclerView recyclerView;
-    private LinearLayoutManager linearLayoutManager;
     private RecyclerViewAdapter recyclerViewAdapter;
     private EditText addTaskBox;
-    private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference;  //to read and write data from firebase
     private List<Task> allTask;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        allTask = new ArrayList<Task>();
-        databaseReference =
-                FirebaseDatabase.getInstance().getReference();
-        addTaskBox = (EditText)findViewById(R.id.todo_task);
-        recyclerView = (RecyclerView)findViewById(R.id.todo_list);
-        linearLayoutManager = new LinearLayoutManager(this);
+        allTask = new ArrayList<>();
+        databaseReference = FirebaseDatabase.getInstance().getReference();  //create instance of database
+        addTaskBox = findViewById(R.id.todo_task);
+        recyclerView = findViewById(R.id.todo_list);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
@@ -82,10 +80,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void taskDeletion(DataSnapshot dataSnapshot){
-        for(DataSnapshot singleSnapshot :
-                dataSnapshot.getChildren()) {
-            String taskTitle =
-                    singleSnapshot.getValue(String.class);
+        for(DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
+            String taskTitle = singleSnapshot.getValue(String.class);
             for(int i = 0; i < allTask.size(); i++){
                 if(allTask.get(i).getTask().equals(taskTitle)){
                     allTask.remove(i);
